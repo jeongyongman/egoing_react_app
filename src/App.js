@@ -5,8 +5,8 @@ class Subject extends Component{
   render(){
     return(
       <header>
-        <h1>WEB</h1>
-        world wide web!
+        <h1>{this.props.title}</h1>
+        {this.props.sub}
       </header>
     );
   }
@@ -28,8 +28,8 @@ class Content extends Component{
   render(){
     return(
       <article>
-        <h2>HTML</h2>
-        HTML은 하이퍼텍스트 마크업 랭귀지이다.
+        <h2>{this.props.title}</h2>
+        {this.props.desc}
       </article>
     );
   }
@@ -38,9 +38,10 @@ class App extends Component{
   render(){
     return(
       <div className="App">
-        <Subject></Subject>
+        <Subject title="WEB" sub="world wide web!"></Subject>
+        <Subject title="React" sub="For UI"></Subject>
         <TOC></TOC>
-        <Content></Content>
+        <Content title="HTML" desc="HTML은 하이퍼텍스트 마크업 랭귀지이다."></Content>
       </div>
     );
   }
