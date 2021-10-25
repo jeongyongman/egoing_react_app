@@ -9,7 +9,7 @@ class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      mode:'welcome',
+      mode:'read',
       subject:{title:"WEB", sub:"world wide web!"},
       welcome:{title:"Welcome",desc:"Hello, React!!!"},
       contents:[
@@ -38,7 +38,11 @@ class App extends Component{
           <h1><a href="/" onClick={function(e){
             console.log(e);
             e.preventDefault();
-          }}>{this.state.subject.title}</a></h1>
+            // this.state.mode='welcome';
+            this.setState({
+              mode:'welcome'
+            })
+          }.bind(this)}>{this.state.subject.title}</a></h1>
           {this.state.subject.sub}
         </header>
 
